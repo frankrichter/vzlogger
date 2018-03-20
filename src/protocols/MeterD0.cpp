@@ -358,7 +358,7 @@ ssize_t MeterD0::read(std::vector<Reading>& rds, size_t max_readings) {
 		if (_baudrate_change_delay_ms) usleep (_baudrate_change_delay_ms * 1000); // give some time for baudrate change to be applied
 		int wlen=write(_fd,_pull.c_str(),_pull.size());
 		dump_file(DUMP_OUT, _pull.c_str(), wlen >0 ? wlen : 0);
-		print(log_debug,"sending pullsequenz send (len:%d is:%d).",name().c_str(),_pull.size(),wlen);
+		print(log_debug,"sending pull sequence (len:%d is:%d).",name().c_str(),_pull.size(),wlen);
 	}
 
 	time(&start_time);
